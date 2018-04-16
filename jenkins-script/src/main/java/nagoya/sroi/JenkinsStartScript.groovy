@@ -2,11 +2,11 @@ pipeline {
 	agent any
 	stages {
 		stage('Build') {
-			steps { sh 'make' }
+			steps { sh 'mvn' }
 		}
 		stage('Test'){
 			steps {
-				sh 'make check'
+				sh 'mvn check'
 				junit 'reports/**/*.xml'
 			}
 		}
