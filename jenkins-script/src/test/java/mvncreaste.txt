@@ -1,0 +1,1 @@
+mvn -B archetype:generate -DgroupId=nagoya.sroi -DartifactId=jenkins-script -DarchetypeArtifactId=maven-archetype-quickstart
