@@ -2,9 +2,12 @@ pipeline {
 	agent any
 	stages {
 		stage('Build') {
-			checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [
-					[credentialsId: '7aebbc8e-9777-437a-9290-e93f577e4da8', url: 'https://github.com/sharebase/sharecoin-web.git']
-				]])
+			steps {
+				checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [
+						[credentialsId: '7aebbc8e-9777-437a-9290-e93f577e4da8', url: 'https://github.com/sharebase/sharecoin-web.git']
+					]])
+			}
+
 			steps { sh 'mvn' }
 		}
 		stage('Test'){
@@ -13,6 +16,7 @@ pipeline {
 				junit 'reports/**/*.xml'
 			}
 		}
-		stage('Deploy') { steps { sh 'make publish' } }
+		stage('Deploy') { steps { sh 'make publish'
+			} }
 	}
 }
