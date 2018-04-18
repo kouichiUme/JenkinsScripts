@@ -18,3 +18,4 @@ pipeline {
 		stage('Deploy') { steps { sh 'make publish' } }
 	}
 }
+6
