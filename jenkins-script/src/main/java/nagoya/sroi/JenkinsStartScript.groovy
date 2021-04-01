@@ -15,7 +15,14 @@ pipeline {
 				junit 'reports/**/*.xml'
 			}
 		}
-		stage('Deploy') { steps { sh 'make publish' } }
+		stage('Deploy') { steps {
+			 echo "start deploying "
+			
+			 sh 'make publish' 
+			 
+			 } }
+
+
 	}
 }
 6
