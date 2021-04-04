@@ -11,7 +11,7 @@ pipeline {
 		}
 		stage('Test'){
 			steps {
-				sh 'mvn check'
+				sh 'mvn test'
 				junit 'reports/**/*.xml'
 			}
 		}
