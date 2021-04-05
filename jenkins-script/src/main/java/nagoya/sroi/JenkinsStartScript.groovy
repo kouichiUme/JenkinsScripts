@@ -11,18 +11,15 @@ pipeline {
 		}
 		stage('Test'){
 			steps {
-				sh 'mvn test'
 				junit 'reports/**/*.xml'
 			}
 		}
 		stage('Deploy') { steps {
 			 echo "start deploying "
 			
-			 sh 'make publish' 
 			 
 			 } }
 
 
 	}
 }
-6
