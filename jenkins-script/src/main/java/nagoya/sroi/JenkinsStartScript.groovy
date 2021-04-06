@@ -1,4 +1,4 @@
-def map ~ [:]
+def map =[:]
 pipeline {
 	agent any
 	stage('Build') {
