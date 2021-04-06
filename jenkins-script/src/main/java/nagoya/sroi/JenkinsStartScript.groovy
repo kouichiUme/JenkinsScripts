@@ -17,10 +17,10 @@ pipeline {
 		}
 		stage('Deploy') { steps {
 			 echo "start deploying "
-			echo map
+			 echo map
 			 echo map.length
 			 
 			 }
 		}
 	}
-
+}
