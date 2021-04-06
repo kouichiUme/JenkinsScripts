@@ -1,8 +1,6 @@
 def map =[:]
 
-pipeline {
-	agent any
-	stages {
+pipeline a{
 		stage('Build') {
 			steps {
 				checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [
@@ -19,7 +17,7 @@ pipeline {
 		}
 		stage('Deploy') { steps {
 			 echo "start deploying "
-		
+			echo map
 			 echo map.length
 			 
 			 } }
