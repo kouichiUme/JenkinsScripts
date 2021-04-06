@@ -1,3 +1,5 @@
+def map =[:]
+
 pipeline {
 	agent any
 	stages {
@@ -17,8 +19,7 @@ pipeline {
 		}
 		stage('Deploy') { steps {
 			 echo "start deploying "
-			 def map =[:]
-
+		
 			 echo map.length
 			 
 			 } }
