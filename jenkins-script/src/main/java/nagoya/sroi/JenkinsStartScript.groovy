@@ -15,11 +15,13 @@ pipeline {
 				// junit 'reports/**/*.xml'
 			}
 		}
-		stage('Deploy') { steps {
-			 echo "start deploying "
-			 echo map.length
+		stage('Deploy') {
+			 steps {
+				echo "start deploying "
+				echo map.length
+				echo map
 			 
 			 }
 		}
 	}
-}
+
