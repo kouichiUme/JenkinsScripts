@@ -1,5 +1,3 @@
-def map =[:]
-
 pipeline {
 		stage('Build') {
 			steps {
@@ -24,4 +22,3 @@ pipeline {
 			 }
 		}
 	}
-
