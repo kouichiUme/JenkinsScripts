@@ -20,7 +20,8 @@ pipeline {
 			 steps {
 				echo "start deploying "
 				echo map.length
-				echo map
+				
+				// echo map
 			 
 			 }
 		}
