@@ -17,7 +17,9 @@ pipeline {
 		}
 		stage('Deploy') { steps {
 			 echo "start deploying "
-			
+			 def map =[:]
+
+			 echo map.length
 			 
 			 } }
 
