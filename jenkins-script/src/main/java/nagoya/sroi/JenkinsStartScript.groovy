@@ -1,6 +1,7 @@
 def map =[:]
 pipeline {
 	agent any
+	stages {
 	stage('Build') {
 			steps {
 				checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [
@@ -24,3 +25,4 @@ pipeline {
 			 }
 		}
 	}
+}
