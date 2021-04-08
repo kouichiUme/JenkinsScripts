@@ -20,6 +20,8 @@ pipeline {
 			 steps {
 				echo "start deploying "
 				echo map.length
+				sh "source /tools/Xilinx/Vitis_HLS/bin/setupEnv.sh"
+				sh "env"
 				
 				// echo map
 			 
