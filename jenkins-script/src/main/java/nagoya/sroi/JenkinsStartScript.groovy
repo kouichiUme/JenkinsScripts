@@ -1,10 +1,10 @@
 def map =[:]
-node {
-	withGradle{
-		sh 'gradle help --scan'
-	}
-}
-fiindBuildScans()
+// node {
+// 	withGradle{
+// 		sh 'gradle help --scan'
+// 	}
+// }
+// fiindBuildScans()
 pipeline {
 	agent any
 	stages {
