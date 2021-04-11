@@ -1,6 +1,8 @@
 def map =[:]
 node {
-	sh 'gradle help --scan'
+	withGradle{
+		sh 'gradle help --scan'
+	}
 }
 fiindBuildScans()
 pipeline {
