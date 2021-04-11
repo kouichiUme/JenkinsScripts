@@ -1,4 +1,8 @@
 def map =[:]
+node {
+	sh 'gradle help --scan'
+}
+fiindBuildScans()
 pipeline {
 	agent any
 	stages {
