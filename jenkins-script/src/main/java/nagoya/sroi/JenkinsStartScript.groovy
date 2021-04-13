@@ -28,6 +28,7 @@ pipeline {
 		stage('Test'){
 			steps {
 				echo "start test"
+				sh 'ANDROID_SDK_ROOT=/home/kouichi/Android/Sdk ./gradlew test'
 				// junit 'reports/**/*.xml'
 			}
 		}
