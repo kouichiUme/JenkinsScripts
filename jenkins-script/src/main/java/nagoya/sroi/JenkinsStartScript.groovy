@@ -22,7 +22,7 @@ pipeline {
 					[credentialsId: 'github', url: 'https://github.com/kouichiUme/fpgaPractiseProject.git']
 				]])
 				sh ". /tools/Xilinx/Vitis_HLS/2020.2/bin/setupEnv.sh"
-				sh ". /tools/Xilinx/Vitis/2020.2/settings64.sh"
+				sh "bash /tools/Xilinx/Vitis/2020.2/settings64.sh"
 				
 			}
 		}
