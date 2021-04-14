@@ -21,14 +21,11 @@ pipeline {
 				checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [
 					[credentialsId: 'github', url: 'https://github.com/kouichiUme/fpgaPractiseProject.git']
 				]])
-				sh ". /tools/Xilinx/Vitis_HLS/2020.2/bin/setupEnv.sh"
-				sh "bash /tools/Xilinx/Vitis/2020.2/settings64.sh "
-				sh ". /tools/Xilinx/DocNav/.settings64-DocNav.sh"
-				sh ". /tools/Xilinx/Vivado/2020.2/.settings64-Vivado.sh"
-				sh ". /tools/Xilinx/Vitis/2020.2/.settings64-Vitis.sh"
-				sh ". /tools/Xilinx/Model_Composer/2020.2/.settings64-Model_Composer.sh"
-				sh ". /tools/Xilinx/Vitis_HLS/2020.2/.settings64-Vitis_HLS.sh"
-				sh "v++ --version"
+				sh " /tools/Xilinx/Vitis_HLS/2020.2/bin/setupEnv.sh"
+				sh '''
+					. /tools/Xilinx/Vitis/2020.2/settings64.sh 
+					v++ --version
+					'''
 				
 			}
 		}
