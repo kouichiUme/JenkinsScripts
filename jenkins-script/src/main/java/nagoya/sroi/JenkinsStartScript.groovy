@@ -30,7 +30,7 @@ pipeline {
 					. /tools/Xilinx/Vitis_HLS/2020.2/.settings64-Vitis_HLS.sh
 					v++ --version
 					'''
-				
+				sh 'ninja'
 			}
 		}
 		stage('Test'){
