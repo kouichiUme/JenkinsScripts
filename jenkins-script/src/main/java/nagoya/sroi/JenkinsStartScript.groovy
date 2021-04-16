@@ -30,7 +30,8 @@ pipeline {
 					. /tools/Xilinx/Vitis_HLS/2020.2/.settings64-Vitis_HLS.sh
 					v++ --version
 					'''
-				sh 'ndk-build clean'
+				sh '${ANDROID_SDK_ROOT}/cmake/3.10.2.4988404/bin/cmake'
+				sh '${ANDROID_SDK_ROOT}/ndk/22.1.7171670/ndk-build clean'
 				sh 'ninja'
 			}
 		}
