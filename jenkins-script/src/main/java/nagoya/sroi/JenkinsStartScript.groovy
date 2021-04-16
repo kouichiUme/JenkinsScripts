@@ -18,7 +18,8 @@ pipeline {
 						[credentialsId: '7aebbc8e-9777-437a-9290-e93f577e4da8', url: 'https://github.com/kouichiUme/AndroidNativeSample.git']
 					]])
 				sh '''
-				ANDROID_SDK_ROOT=/home/kouichi/Android/Sdk ./gradlew build
+				export ANDROID_SDK_ROOT=/home/kouichi/Android/Sdk
+				 ./gradlew build
 				${ANDROID_SDK_ROOT}/cmake/3.10.2.4988404/bin/cmake
 				${ANDROID_SDK_ROOT}/ndk/22.1.7171670/ndk-build clean
 				'''
