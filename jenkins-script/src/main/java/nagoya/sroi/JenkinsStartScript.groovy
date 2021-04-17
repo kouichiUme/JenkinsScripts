@@ -19,6 +19,7 @@ pipeline {
 					]])
 				sh '''
 				export ANDROID_SDK_ROOT=/home/kouichi/Android/Sdk
+				export NDK_PROJECT_PATH=.
 				 ./gradlew build
 				${ANDROID_SDK_ROOT}/cmake/3.10.2.4988404/bin/cmake
 				${ANDROID_SDK_ROOT}/ndk/22.1.7171670/ndk-build clean
