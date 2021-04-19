@@ -22,7 +22,6 @@ pipeline {
 				export NDK_PROJECT_PATH=.
 				 ./gradlew build
 				${ANDROID_SDK_ROOT}/cmake/3.10.2.4988404/bin/cmake
-				${ANDROID_SDK_ROOT}/ndk/22.1.7171670/ndk-build clean
 				'''
 				checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [
 					[credentialsId: 'github', url: 'https://github.com/kouichiUme/fpgaPractiseProject.git']
