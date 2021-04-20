@@ -24,7 +24,7 @@ pipeline {
 				${ANDROID_SDK_ROOT}/cmake/3.10.2.4988404/bin/cmake
 				'''
 				dir('fpga'){
-					checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [
+					clone([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [
 						[credentialsId: 'github', url: 'https://github.com/kouichiUme/fpgaPractiseProject.git']
 					]])
 					// sh " /tools/Xilinx/Vitis_HLS/2020.2/bin/setupEnv.sh"
