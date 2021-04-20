@@ -33,7 +33,7 @@ pipeline {
 					. /tools/Xilinx/Vitis/2020.2/.settings64-Vitis.sh
 					. /tools/Xilinx/Model_Composer/2020.2/.settings64-Model_Composer.sh
 					. /tools/Xilinx/Vitis_HLS/2020.2/.settings64-Vitis_HLS.sh
-					v++ HDL/blink.v
+					xvlog++ HDL/blink.v --
 					'''
 			}
 		}
