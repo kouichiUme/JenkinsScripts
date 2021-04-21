@@ -27,7 +27,7 @@ pipeline {
 					// checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [
 					// 	[credentialsId: 'github', url: 'https://github.com/kouichiUme/fpgaPractiseProject.git']
 					// ]])
-					git branch : 'master',
+					git branch : 'main',
 					credentialsId: 'github',
 					url: 'https://github.com/kouichiUme/fpgaPractiseProject.git'
 					// sh " /tools/Xilinx/Vitis_HLS/2020.2/bin/setupEnv.sh"
