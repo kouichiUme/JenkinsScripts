@@ -24,13 +24,13 @@ pipeline {
 				${ANDROID_SDK_ROOT}/cmake/3.10.2.4988404/bin/cmake
 				'''
 				dir('fpga'){
-					clone([$class: 'CloneWorkspaceSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [
+					checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [
 						[credentialsId: 'github', url: 'https://github.com/kouichiUme/fpgaPractiseProject.git']
 					]])
 					// sh " /tools/Xilinx/Vitis_HLS/2020.2/bin/setupEnv.sh"
 					sh '''
 						. /tools/Xilinx/DocNav/.settings64-DocNav.sh
-						. /tools/Xilinx/Vivado/2020.2/.settings64-Vivado.sh
+						. /tools/Xilinx/Vivado/2020.2/.settings64-Vivado.shs
 						. /tools/Xilinx/Vitis/2020.2/.settings64-Vitis.sh
 						. /tools/Xilinx/Model_Composer/2020.2/.settings64-Model_Composer.sh
 						. /tools/Xilinx/Vitis_HLS/2020.2/.settings64-Vitis_HLS.sh
