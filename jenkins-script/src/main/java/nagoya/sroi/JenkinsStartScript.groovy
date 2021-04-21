@@ -33,7 +33,7 @@ pipeline {
 					// sh " /tools/Xilinx/Vitis_HLS/2020.2/bin/setupEnv.sh"
 					sh '''
 						. /tools/Xilinx/DocNav/.settings64-DocNav.sh
-						. /tools/Xilinx/Vivado/2020.2/.settings64-Vivado.shs
+						. /tools/Xilinx/Vivado/2020.2/.settings64-Vivado.sh
 						. /tools/Xilinx/Vitis/2020.2/.settings64-Vitis.sh
 						. /tools/Xilinx/Model_Composer/2020.2/.settings64-Model_Composer.sh
 						. /tools/Xilinx/Vitis_HLS/2020.2/.settings64-Vitis_HLS.sh
