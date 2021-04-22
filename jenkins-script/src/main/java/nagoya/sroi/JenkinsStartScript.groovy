@@ -43,6 +43,7 @@ pipeline {
 						. /tools/Xilinx/Model_Composer/2020.2/.settings64-Model_Composer.sh
 						. /tools/Xilinx/Vitis_HLS/2020.2/.settings64-Vitis_HLS.sh
 						xvlog HDL/blink.v 
+						xelab blink
 						'''
 				}
 			}
