@@ -7,8 +7,13 @@ def map =[:]
 // fiindBuildScans()
 pipeline {
 	agent any
+	environment {
+				ANDROID_SDK_ROOT='/home/kouichi/Android/Sdk'
+			}
 	stages {
+		
 	stage('Build') {
+			
 			steps {
 				dir('blockchain'){
 					checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [
@@ -52,7 +57,7 @@ pipeline {
 			steps {
 				echo "start test"
 				dir("android"){
-					sh 'ANDROID_SDK_ROOT=/home/kouichi/Android/Sdk ./gradlew test'
+					sh './gradlew test'
 				}
 				// junit 'reports/**/*.xml'
 			}
