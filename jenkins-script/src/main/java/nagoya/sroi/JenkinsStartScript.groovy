@@ -8,7 +8,7 @@ def map =[:]
 pipeline {
 	agent any
 	  triggers {
-        cron('*/5 * * * 1-5')
+        cron('*/5 * * * *')
 		
     }
 	environment {
