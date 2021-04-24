@@ -7,6 +7,10 @@ def map =[:]
 // fiindBuildScans()
 pipeline {
 	agent any
+	  triggers {
+        cron('H */4 * * 1-5')
+		
+    }
 	environment {
 				ANDROID_SDK_ROOT='/home/kouichi/Android/Sdk'
 			}
