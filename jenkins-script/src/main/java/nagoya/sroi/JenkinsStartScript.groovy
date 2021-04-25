@@ -78,7 +78,7 @@ pipeline {
 						values 'firefox',"chrome","safari","edge"
 					}
 				}
-			}
+
 			stages{
 				stage("deploy"){
 					steps {
@@ -92,6 +92,7 @@ pipeline {
 					}
 				}
 			}
+						}
 		}
 	}
 }
