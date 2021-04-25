@@ -79,15 +79,19 @@ pipeline {
 					}
 				}
 			}
-			 steps {
-				echo "start deploying ${plathome} -${browser}"
-				echo map.length
-				// sh ". /tools/Xilinx/Vitis_HLS/2020.2/bin/setupEnv.sh"
-				sh "env"
-				
-				// echo map
-			 
-			 }
+			stages{
+				stage("deploy"){
+					steps {
+						echo "start deploying ${plathome} -${browser}"
+						echo map.length
+						// sh ". /tools/Xilinx/Vitis_HLS/2020.2/bin/setupEnv.sh"
+						sh "env"
+						
+						// echo map
+					
+					}
+				}
+			}
 		}
 	}
 }
