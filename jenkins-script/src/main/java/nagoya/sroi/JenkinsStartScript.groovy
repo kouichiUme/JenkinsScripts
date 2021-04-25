@@ -7,10 +7,10 @@ def map =[:]
 // fiindBuildScans()
 pipeline {
 	agent any
-	  triggers {
-        cron('*/5 * * * *')
+	//   triggers {
+    //     cron('*/5 * * * *')
 		
-    }
+    // }
 	environment {
 				ANDROID_SDK_ROOT='/home/kouichi/Android/Sdk'
 			}
@@ -67,8 +67,20 @@ pipeline {
 			}
 		}
 		stage('Deploy') {
+			matrix {
+				axes {
+					axis {
+						name "plathome"
+						values 'linux','windows','mac'
+					}
+					axis{
+						name "browser"
+						values 'firefox',"chrome","safari","edge"
+					}
+				}
+			}
 			 steps {
-				echo "start deploying "
+				echo "start deploying ${plathome} -${browser}"
 				echo map.length
 				// sh ". /tools/Xilinx/Vitis_HLS/2020.2/bin/setupEnv.sh"
 				sh "env"
