@@ -17,7 +17,6 @@ pipeline {
 	stages {
 		
 	stage('Build') {
-			
 			steps {
 				dir('blockchain'){
 					checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [
@@ -92,7 +91,15 @@ pipeline {
 					}
 				}
 			}
-						}
+			}
+		}
+		stage("infra"){
+			agent { docker 'openjdk:8-jre' } 
+			steps{
+				echo "stage infra "
+				sh 'java -version'
+			}
+
 		}
 	}
 }
