@@ -1,3 +1,4 @@
+import jenkins.model.*
 def map =[:]
 // node {
 // 	withGradle{
