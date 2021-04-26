@@ -93,6 +93,11 @@ pipeline {
 			}
 			}
 		}
+	}
+	
+	stages{
+		agent none
+
 		stage("infra"){
 			agent { docker 'openjdk:8-jre' } 
 			steps{
