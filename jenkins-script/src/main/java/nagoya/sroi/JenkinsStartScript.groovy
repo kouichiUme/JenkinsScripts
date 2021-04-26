@@ -94,13 +94,8 @@ pipeline {
 			}
 			}
 		}
-	}
-}
-pipeline{
-	agent any
-	stages{
 		stage("infra"){
-			agent { docker 'openjdk:8-jre' } 
+			// agent { docker 'openjdk:8-jre' } 
 			steps{
 				echo "stage infra "
 				sh 'java -version'
