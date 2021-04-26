@@ -94,7 +94,9 @@ pipeline {
 			}
 		}
 	}
-	
+}
+pipeline{
+	agent none
 	stages{
 		agent none
 
