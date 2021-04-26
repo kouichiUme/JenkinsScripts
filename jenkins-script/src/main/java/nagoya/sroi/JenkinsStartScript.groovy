@@ -97,7 +97,7 @@ pipeline {
 	}
 }
 pipeline{
-	agent none
+	agent any
 	stages{
 		stage("infra"){
 			agent { docker 'openjdk:8-jre' } 
