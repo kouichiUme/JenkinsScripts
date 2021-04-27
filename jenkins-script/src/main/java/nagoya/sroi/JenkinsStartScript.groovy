@@ -104,5 +104,14 @@ pipeline {
 			}
 
 		}
+		stage("create docker"){
+			angent any
+			steps{
+				echo "stage create docker  "
+				sh 'docker ps'
+			}
+
+
+		}
 	}
 }
