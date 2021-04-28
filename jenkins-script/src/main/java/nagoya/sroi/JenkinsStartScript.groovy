@@ -8,7 +8,7 @@ def map =[:]
 // fiindBuildScans()
 
 				node {
-				def testImage = docker.build("test-image", "./dockerfiles/test") 
+				def testImage = docker.build("test-image", "./jenkins-script/src/dockerfiles/test") 
 
     			testImage.inside {
         			sh 'make test'
