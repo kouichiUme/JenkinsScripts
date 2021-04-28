@@ -108,7 +108,7 @@ pipeline {
 			agent any
 			steps{
 				echo "stage create docker  "
-				sh 'docker ps'
+				sh 'docker create -t --name docker -i ubuntu bash'
 			}
 
 
