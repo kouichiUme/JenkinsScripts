@@ -108,10 +108,12 @@ pipeline {
 			agent any
 			steps{
 				echo "stage create docker  "
-				sh 'docker create -t --name docker -i ubuntu bash'
+				def testImage = docker.build("test-image", "./dockerfiles/test") 
+
+    			testImage.inside {
+        			sh 'make test'
+    			}
 			}
-
-
 		}
 	}
 }
