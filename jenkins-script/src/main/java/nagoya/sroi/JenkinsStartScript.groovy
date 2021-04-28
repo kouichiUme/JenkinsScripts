@@ -6,6 +6,14 @@ def map =[:]
 // 	}
 // }
 // fiindBuildScans()
+
+				node {
+				def testImage = docker.build("test-image", "./dockerfiles/test") 
+
+    			testImage.inside {
+        			sh 'make test'
+    			}
+				}
 pipeline {
 	agent any
 	//   triggers {
@@ -108,15 +116,8 @@ pipeline {
 			agent any
 			steps{
 				echo "stage create docker  "
-				node {
-				def testImage = docker.build("test-image", "./dockerfiles/test") 
-
-    			testImage.inside {
-        			sh 'make test'
-    			}
 
 				}
 			}
 		}
 	}
-}
