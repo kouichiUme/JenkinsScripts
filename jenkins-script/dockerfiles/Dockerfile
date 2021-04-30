@@ -1,3 +1,3 @@
 FROM scratch
-COPY jenkins-script/src/hello /
+COPY hello /
 CMD ["/hello"]
