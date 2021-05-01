@@ -117,7 +117,5 @@ pipeline {
 
 				node {
 				def testImage = docker.build("test-image", "jenkins-script/dockerfiles") 
-    			testImage.inside {
-        			sh 'make test'
-    			}
+    			
 				}
