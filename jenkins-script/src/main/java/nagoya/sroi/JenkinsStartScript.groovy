@@ -116,7 +116,7 @@ pipeline {
 
 
 				node {
-				def testImage = docker.build("test-image", "-f test jenkins-script/dockerfiles") 
+				def testImage = docker.build("test-image", "-f jenkins-script/dockerfiles/test") 
 				testImage.inside{
 					sh 'echo inside '
 				}
