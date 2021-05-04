@@ -56,6 +56,11 @@ pipeline {
 						'''
 				}
 			}
+				steps {
+				dir('provision embedded'){
+
+				}
+			}
 		}
 		stage('Test'){
 			steps {
