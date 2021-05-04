@@ -55,11 +55,9 @@ pipeline {
 						xelab blink
 						'''
 				}
-			}
-				steps {
-				dir('provision embedded'){
+			dir('provision embedded'){
 
-				}
+			}
 			}
 		}
 		stage('Test'){
