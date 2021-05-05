@@ -114,6 +114,17 @@ pipeline {
 				echo "stage create docker  "
 
 				}
+
+			}
+		}
+		// post
+		post{
+			always {
+				echo "always post "
+			}
+			failure{
+				echo "fail"
+
 			}
 		}
 	}
