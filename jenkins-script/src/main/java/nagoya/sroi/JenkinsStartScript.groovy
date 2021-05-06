@@ -15,6 +15,9 @@ pipeline {
 	environment {
 				ANDROID_SDK_ROOT='/home/kouichi/Android/Sdk'
 			}
+			parameters {
+        string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
+    }
 	stages {
 		
 	stage('Build') {
@@ -120,7 +123,7 @@ pipeline {
 		// post
 		post{
 			always {
-				echo "always post "
+				echo "always post ${params.Greeting}"
 			}
 			failure{
 				echo "fail"
