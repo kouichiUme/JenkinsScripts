@@ -71,10 +71,11 @@ pipeline {
 			}
 		}
 		stage('Test'){
-			parallel {
+			/*  parallel {
 
 			node {
-			
+			*/
+			steps{
 				echo "start test"
 				dir("android"){
 					sh './gradlew test'
@@ -82,7 +83,13 @@ pipeline {
 				// junit 'reports/**/*.xml'
 			
 			}
+			post {
+				always{
+
+					echo "end test "
+				}
 			}
+			
 		}
 		stage('Deploy') {
 			matrix {
