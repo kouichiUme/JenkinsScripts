@@ -63,14 +63,19 @@ pipeline {
 				sh 'make --version'
 			}
 			}
+			post{
+				echo "post after build steps"
+			}
 		}
 		stage('Test'){
+			node {
 			steps {
 				echo "start test"
 				dir("android"){
 					sh './gradlew test'
 				}
 				// junit 'reports/**/*.xml'
+			}
 			}
 		}
 		stage('Deploy') {
