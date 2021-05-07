@@ -64,7 +64,10 @@ pipeline {
 			}
 			}
 			post{
-				echo "post after build steps"
+				always{
+					echo "post after build steps"
+
+				}
 			}
 		}
 		stage('Test'){
