@@ -71,7 +71,7 @@ pipeline {
 			}
 		}
 		stage('Test'){
-			pallalel{
+			parallel {
 
 			node {
 			
