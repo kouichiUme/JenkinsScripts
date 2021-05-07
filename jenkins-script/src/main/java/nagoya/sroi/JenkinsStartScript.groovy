@@ -71,13 +71,16 @@ pipeline {
 			}
 		}
 		stage('Test'){
+			pallalel{
+
 			node {
-			steps {
+			
 				echo "start test"
 				dir("android"){
 					sh './gradlew test'
 				}
 				// junit 'reports/**/*.xml'
+			
 			}
 			}
 		}
