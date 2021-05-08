@@ -61,8 +61,7 @@ pipeline {
 			dir('provision embedded'){
 				sh 'gcc --version'
 				sh 'make --version'
-				sh '''
-					#!/bin/bash
+				sh '''#!/bin/bash
 					. /opt/ros/noetic/setup.bash
 
 					'''
