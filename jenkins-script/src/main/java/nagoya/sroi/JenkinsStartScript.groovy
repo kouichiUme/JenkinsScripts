@@ -62,7 +62,9 @@ pipeline {
 				sh 'gcc --version'
 				sh 'make --version'
 				sh '''
+					#!/bin/bash
 					. /opt/ros/noetic/setup.bash
+
 					'''
 			}
 			}
