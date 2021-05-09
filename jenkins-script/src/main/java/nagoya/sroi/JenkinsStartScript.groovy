@@ -92,7 +92,7 @@ pipeline {
 
 					echo "end test "
 				}
-				failure{
+				failure {
 					mail to: kouichiume@gmail.com, subject :"test failed"
 				}
 			}
