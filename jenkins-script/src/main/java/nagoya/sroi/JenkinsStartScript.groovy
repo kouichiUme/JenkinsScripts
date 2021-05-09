@@ -92,6 +92,9 @@ pipeline {
 
 					echo "end test "
 				}
+				failure{
+					mail to : kouichiume@gmail.com", subject :" test failed"
+				}
 			}
 			
 		}
