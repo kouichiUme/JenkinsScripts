@@ -60,10 +60,11 @@ pipeline {
 						'''
 				}
 			dir('provision embedded'){
-				sh '''#!/bin/bash
+				checkout([$class: 'GitSCM' ,branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [
+							[credentialsId: '7aebbc8e-9777-437a-9290-e93f577e4da8', url: 'https://github.com/ros-planning/moveit_tutorials.git']
+					sh '''#!/bin/bash
 					. /opt/ros/noetic/setup.bash
-					make --version
-					g++ --version
+					
 
 					'''
 			}
