@@ -65,7 +65,6 @@ pipeline {
 							]])
 					sh '''#!/bin/bash
 					. /opt/ros/noetic/setup.bash
-					rosdep update
 					rosdep install -y --from-path . --ignore-src --rosdistro noetic
 
 					'''
