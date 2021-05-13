@@ -1,3 +1,4 @@
+#!/usr/bin/env groovy
 import jenkins.model.*
 def map =[:]
 // node {
@@ -14,6 +15,7 @@ pipeline {
     // }
 	environment {
 				ANDROID_SDK_ROOT='/home/kouichi/Android/Sdk'
+				ROS_DISTRO='noetic'
 			}
 			parameters {
         string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
@@ -66,6 +68,8 @@ pipeline {
 					sh '''#!/bin/bash
 					. /opt/ros/noetic/setup.bash
 					rosdep install -y --from-path . --ignore-src --rosdistro noetic
+					catkin config --extend /opt/ros/${ROS_DISTRO} --cmake-args -DCMAKE_BUILD_TYPE=Release
+					
 
 					'''
 			}
