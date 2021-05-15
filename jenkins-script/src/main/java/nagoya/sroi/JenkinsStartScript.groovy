@@ -30,7 +30,7 @@ pipeline {
 							[credentialsId: '7aebbc8e-9777-437a-9290-e93f577e4da8', url: 'https://github.com/sharebase/sharecoin-web.git']
 						]])
 					sh 'mvn compile'
-					archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+					// archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
 					junit 'make check '
 
 				}
