@@ -31,7 +31,7 @@ pipeline {
 						]])
 					sh 'mvn compile'
 					// archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
-					junit 'make check '
+					// junit 'make check '
 
 				}
 				dir('android'){
