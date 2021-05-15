@@ -30,6 +30,8 @@ pipeline {
 							[credentialsId: '7aebbc8e-9777-437a-9290-e93f577e4da8', url: 'https://github.com/sharebase/sharecoin-web.git']
 						]])
 					sh 'mvn compile'
+					archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+					junit 'make check '
 
 				}
 				dir('android'){
@@ -137,6 +139,9 @@ pipeline {
 		stage("infra"){
 			agent {
 				docker {image 'maven:3.8.1-adoptopenjdk-11'}
+			}
+			when {
+				branch "production"
 			}
 			steps{
 				echo "stage infra "
