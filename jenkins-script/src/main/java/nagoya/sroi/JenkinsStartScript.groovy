@@ -39,8 +39,12 @@ pipeline {
 					checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [
 							[credentialsId: '7aebbc8e-9777-437a-9290-e93f577e4da8', url: 'https://github.com/kouichiUme/AndroidNativeSample.git']
 						]])
-					sh '''python3 /opt/bin/repo init -u https://android.googlesource.com/platform/manifest
+					sh '''#!/bin/bash
+					python3 /opt/bin/repo init -u https://android.googlesource.com/platform/manifest
 					python3 /opt/bin/repo sync -j16
+					. build/envsetup.sh
+					lunch aosp_cf_x86_phone-userdebug
+					m
 					'''
 									}
 				dir('android'){
