@@ -40,11 +40,12 @@ pipeline {
 							[credentialsId: '7aebbc8e-9777-437a-9290-e93f577e4da8', url: 'https://github.com/kouichiUme/AndroidNativeSample.git']
 						]])
 					sh '''#!/bin/bash
-					python3 /opt/bin/repo init -u https://android.googlesource.com/platform/manifest
+					#python3 /opt/bin/repo init -u https://android.googlesource.com/platform/manifest
 					python3 /opt/bin/repo sync -j16
 					. build/envsetup.sh
 					lunch aosp_cf_x86_phone-userdebug
 					m
+					make fastboot adb
 					'''
 									}
 				dir('android'){
