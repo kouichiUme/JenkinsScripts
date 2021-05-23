@@ -44,8 +44,8 @@ pipeline {
 					python3 /opt/bin/repo sync -j16
 					. build/envsetup.sh
 					lunch aosp_cf_x86_phone-userdebug
-					m
-					make fastboot adb
+					m all
+					# make fastboot adb
 					'''
 									}
 				dir('android'){
