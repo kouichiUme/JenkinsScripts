@@ -10,7 +10,9 @@ pipeline {
 	stages {
 	stage('Build') {
 			steps {
+				bat "nuget restore "path to *.sln" file"
 				bat "dotnet build YourProjectPath\\Project.csproj --configuration Release"				
+				bat "msbuild "
 			}
 		}
 		stage('Test'){
