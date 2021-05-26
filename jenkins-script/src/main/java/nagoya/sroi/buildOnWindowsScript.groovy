@@ -5,8 +5,10 @@ def map =[:]
 // 	}
 // }
 // fiindBuildScans()
+
 pipeline {
 	agent any
+
 	stages {
 	stage('Build') {
 			steps {
@@ -15,7 +17,11 @@ pipeline {
 				bat "dotnet publish -c Release --no-build"
 				bat "msbuild "
 			}
+			node {
+	    		powershell 'Write-Output "Hello, World!"'
+			}
 		}
+
 		stage('Test'){
 			steps {
 				echo "start test"				// junit 'reports/**/*.xml'
