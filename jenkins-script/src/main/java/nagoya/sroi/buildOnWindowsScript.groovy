@@ -19,12 +19,14 @@ pipeline {
 			}
 			node {
 	    		powershell 'Write-Output "Hello, World!"'
+
 			}
 		}
 
 		stage('Test'){
 			steps {
-				echo "start test"				// junit 'reports/**/*.xml'
+				echo "start test"	
+				dotnetTest 			// junit 'reports/**/*.xml'
 
 			}
 		}
