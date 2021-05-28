@@ -13,7 +13,7 @@ pipeline {
 	stage('Build') {
 			steps {
 				bat "nuget restore "path to *.sln" file"
-				bat "dotnet build YourProjectPath\\Project.csproj --configuration Release"				
+				bat "dotnet build WebApplication.sln"				
 				bat "dotnet publish -c Release --no-build"
 				bat "msbuild "
 			}
