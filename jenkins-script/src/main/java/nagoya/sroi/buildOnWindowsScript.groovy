@@ -15,7 +15,7 @@ pipeline {
 				git branch : 'master',
 					credentialsId: 'github',
 					url: 'https://github.com/kouichiUme/AspNetWebApplication.git'
-
+				bat "nuget"
 				bat "nuget restore "path to *.sln" file"
 				bat "dotnet build WebApplication.sln"				
 				bat "dotnet publish -c Release --no-build"
